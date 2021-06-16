@@ -1,17 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="course_form_view" model="ir.ui.view">
-        <field name="name">course.form</field>
-        <field name="model">openacademy.course </field>
+
+    <record model="ir.ui.view" id="course_form_view">
+            <field name="name">course.form</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                        <group>
+                            <field name="name"></field>
+                            <field name="responsible_id"></field>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"></field>
+                            </page>
+                            <page string="About">
+                                This is an example of notebooks
+                            </page>
+                            <page string="Sessions">
+                                <field name="session_ids">
+                                    <tree string="Registered sessions">
+                                        <field name="name"></field>
+                                        <field name="instructor_id"></field>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="course_search_view">
+        <field name="name">course.search</field>
+        <field name="model">openacademy.course</field>
         <field name="arch" type="xml">
-                    <form string="Course Name">
-                        <sheet>
-                            <group>
-                                <field name="name" />
-                                <field name="description" />
-                            </group>
-                        </sheet>
-                    </form>
+            <search>
+                <field name="name"></field>
+                <field name="description"></field>
+            </search>        
+        </field>
+    </record>
+
+     <record model="ir.ui.view" id="course_tree_view">
+        <field name="name">course.tree</field>
+        <field name="model">openacademy.course</field>
+        <field name="arch" type="xml">
+            <tree string="Course Tree">
+                <field name="name"></field>
+                <field name="responsible_id"></field>
+            </tree>        
         </field>
     </record>
 </odoo>
