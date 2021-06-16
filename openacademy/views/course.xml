@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="record_name" model="model_name">
+    <record id="course_form_view" model="ir.ui.view">
         <field name="name">course.form</field>
         <field name="model">openacademy.course </field>
-        <field name="arch">
-                    <form string="">
+        <field name="arch" type="xml">
+                    <form string="Course Name">
                         <sheet>
                             <group>
                                 <field name="name" />
